@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Booking Form</title>
+</head>
+ <!-- CSS -->
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  body{
+        border: 1px dotted black;
+        place-items: center;
+        background-color: bisque;
+        color: rgb(18, 12, 2);
+        height: 100vh;
+        font-size: 20px;
+    }
+    .box{
+        gap: 10px;
+        align-items: center;
+        text-transform: capitalize;
+        margin: 10px 0;
+        font-family: sans-serif;
+        font-weight: bolder;
+    }
+    input[type="radio"]{
+        margin: 15px;
+        
+    }
+    h2{
+        margin: 10px 0;
+    }
+</style>
+<body>
+    <!-- Restaurant Booking From  -->
+    <div class="From">
+        <h2>Restaurant Booking Form</h2>
+
+        <input type="radio" name="book" onclick="booking(), hideall()">Full day booking <br>
+        <input type="radio" name="book" onclick="slotbtn()">Half day booking <br>
+        <input type="radio" name="book" onclick="date_time()">Hourly booking <br>
+    
+        <div class="box" id="box">
+            <div class="same"> User name <br> <input type="text"></div>
+            <div class="same"> mobile number <br> <input type="text">
+            </div>
+            <div class="same"> Email <br> <input type="Email">
+            </div>
+            <div class="same"> No of person <br> <input type="number">
+            </div>
+            <div id="date"> date <br> <input type="date">
+            </div>
+            <div id="time" id="hide" class="same"> Time <br> <input type="time">
+            </div>
+            <div class="hide same" > Slot <br> <select name="" id="">
+                <option value="">Breakfast</option>
+                <option value="">Lunch</option>
+                <option value="">Dinner</option>
+            </select>
+            </div>
+        </div>
+    </div>
+</body>
+   <!-- JavaScript -->
+<script>
+    let fullday = document.getElementById("date");
+    let date = document.querySelector("div:nth-child(5)")
+    let slot = document.querySelector("div:nth-child(7)")
+    let timeDate =  document.querySelector("div:nth-child(6)")
+    let same = document.getElementsByClassName("same")
+    function booking(){
+        date.style.display="block"
+    }
+    function slotbtn(){
+        slot.style.display="block"
+        date.style.display="block"
+
+    }
+    function date_time() {
+        date.style.display="block"
+        timeDate.style.display="block"
+        slot.style.display="none"
+    }
+    function hideall(){
+       for (let i = 0; i < same.length; i++) {
+        same[i].style.display="none"
+       }
+    }
+</script>
+</html>
