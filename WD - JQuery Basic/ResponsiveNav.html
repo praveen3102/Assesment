@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Respnsive Navbar</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      color: rgb(232, 228, 220);
+      list-style: none;
+    }
+
+    .nav {
+      background-color: white;
+      font-size: 27px;
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+
+    }
+
+    .navlink {
+      width: 50%;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .menu,
+    .navlink2 {
+      display: none;
+    }
+
+    /* MEDIA QR */
+    @media (max-width: 576px) {
+      body {
+        background-color:rgb(218, 212, 203);
+      }
+
+      .navlink>a {
+        display: none;
+      }
+
+      .menu {
+        display: inline;
+      }
+
+      .menu:hover {
+        outline: 3px solid rgb(232, 241, 241);
+        outline-offset: 9px;
+      }
+
+      .navlink2 {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+      }
+
+      .navlink2 {
+        position: absolute;
+        right: 0;
+        top: 93px;
+        background-image: linear-gradient(white);
+      }
+
+      .navlink2>a {
+        padding: 15px;
+
+      }
+
+      .navlink2>a:hover {
+        color: black;
+        /* text-shadow: 2px 2px 5px black, 2px 2px 5px turquoise, 2px 2px 1px green, 2px 2px 9px white; */
+        border-block: 3px solid white;
+     
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="nav">
+
+    <div class="logo">
+      <span>Praveen</span>
+    </div>
+
+    <div class="navlink">
+      <a href="">Home</a>
+      <a href="">About</a>
+      <a href="">Projects</a>
+      <a href="">Contact</a>
+    </div>
+
+    <div class="menu">
+
+      <details>
+
+        <summary>☰</summary>
+
+        <div class="navlink2">
+          <a href="">Home</a>
+          <a href="">About</a>
+          <a href="">Projects</a>
+          <a href="">Contact</a>
+        </div>
+
+      </details>
+
+    </div>
+  </div>
+
+</body>
+</html>
